@@ -46,5 +46,4 @@ function ledSwitchFunction() {
     }
 }
 
-led.addEventListener("click", timeOut);
 ledSwitch.addEventListener("click", ledSwitchFunction);
