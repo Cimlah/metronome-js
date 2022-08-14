@@ -79,6 +79,10 @@ main {
 }
 
 .leds-container {
+    background-color: #494542;
+    box-shadow: inset 0px 0px 30px 0px rgba(0, 0, 0, 1);
+    border-radius: 15px;
+
     width: 95%;
     height: 50%;
     
@@ -88,8 +92,9 @@ main {
 }
 
 .led-container {
+    height: 90%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
 }
@@ -105,22 +110,39 @@ main {
     box-shadow: var(--shadow-led);
 }
 
+.switch-container {
+    background-color: #494542;
+    width: 3rem;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 20px -5px rgba(0, 0, 0, 1);
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.switch-container:hover {
+    box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 1);
+}
+
 .led-switch {
     background-color: #FFFFFF;
 
-    width: 1rem;
-    height: 1rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    margin: 0.1rem;
 
     /* border: 2px solid #23773f;
     box-sizing: border-box; */
     border-radius: 50%;
-    box-shadow: 0px 0px 20px 4px rgba(199, 154, 125, 1);
+    /* box-shadow: 0px 0px 20px 4px rgba(199, 154, 125, 1); */
 }
 
 .led-switch-off {
-    transform: translateX(-3rem);
+    transform: translateX(0rem);
 }
 
 .led-switch-on {
-    transform: translateX(3rem);
+    transform: translateX(1.8rem);
 }

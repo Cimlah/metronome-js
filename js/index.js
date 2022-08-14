@@ -1,11 +1,12 @@
 const bpmIndicator = document.querySelector(".bpm-indicator");
 const bpm = 120;
 const leds = document.querySelectorAll(".led");
+const switchContainers = document.querySelectorAll(".switch-container");
 const ledSwitches = document.querySelectorAll(".led-switch");
 
 bpmIndicator.innerHTML = bpm + " BPM";
 
-ledSwitches.forEach((value, i) => {
+switchContainers.forEach((value, i) => {
     value.addEventListener("click", () => {
         if(ledSwitches[i].classList.contains("led-switch-off")) {
             ledSwitches[i].classList.replace("led-switch-off", "led-switch-on"); // Move the switch to ON position
