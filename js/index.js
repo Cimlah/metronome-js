@@ -8,11 +8,9 @@ bpmIndicator.innerHTML = bpm + " BPM";
 function stateChange() {
     if(led.classList.contains("led-state1")) {
         led.classList.replace("led-state1", "led-state2");
-        console.log("LED is on");
     }
     else {
         led.classList.replace("led-state2", "led-state1");
-        console.log("LED is off");
     }
 }
 
