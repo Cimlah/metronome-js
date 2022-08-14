@@ -1,0 +1,27 @@
+.led-animation-on {
+    animation: animation-on 0.3s ease 0s 1 normal forwards;
+}
+
+.led-animation-off {
+    animation: animation-off 0.3s ease 0s 1 normal forwards;
+}
+
+@keyframes animation-on {
+    0% {
+        transform: translateX(-3rem);
+    }
+
+    100% {
+        transform: translateX(3rem);
+    }
+}
+
+@keyframes animation-off {
+    0% {
+        transform: translateX(3rem);
+    }
+
+    100% {
+        transform: translateX(-3rem);
+    }
+}
