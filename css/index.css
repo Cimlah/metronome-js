@@ -1,10 +1,13 @@
 :root {
     --background-led-off: rgb(93,23,23);
     --background-led-state1: rgb(255,201,102);
+    --background-led-state2: rgb(102,194,255);
     --gradient-led-off: radial-gradient(circle, rgb(88, 47, 19) 50%, rgba(42,39,39,1) 75%);
     --gradient-led-state1: radial-gradient(circle, rgba(255,201,102,1) 60%, rgba(119,63,26,1) 100%);
+    --gradient-led-state2: radial-gradient(circle, rgba(102,194,255,1) 60%, rgba(26,91,119,1) 100%);
     --shadow-led-off: 0px 11px 30px -10px rgba(0, 0, 0, 1);
     --shadow-led-state1: 0px 11px 30px -10px rgba(255, 229, 186, 1);
+    --shadow-led-state2: 0px 11px 30px -10px rgb(174, 223, 255);
 }
 
 .led-off {
@@ -17,6 +20,12 @@
     --background-led: var(--background-led-state1);
     --gradient-led: var(--gradient-led-state1);
     --shadow-led: var(--shadow-led-state1);
+}
+
+.led-state2 {
+    --background-led: var(--background-led-state2);
+    --gradient-led: var(--gradient-led-state2);
+    --shadow-led: var(--shadow-led-state2);
 }
 
 * {
