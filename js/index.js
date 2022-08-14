@@ -3,6 +3,8 @@ const bpm = 120;
 const leds = document.querySelectorAll(".led");
 const switchContainers = document.querySelectorAll(".switch-container");
 const ledSwitches = document.querySelectorAll(".led-switch");
+const mainSwitch = document.querySelector(".main-switch");
+const mainSwitchContainer = document.querySelector(".main-switch-container");
 
 bpmIndicator.innerHTML = bpm + " BPM";
 
@@ -22,4 +24,17 @@ switchContainers.forEach((value, i) => {
             else {leds[i].classList.replace("led-state2", "led-off");} // Turn off the LED
         } // Turn off the LED
     })
+});
+
+mainSwitchContainer.addEventListener("click", () => {
+    if(mainSwitch.classList.contains("main-switch-off")) {
+        mainSwitch.classList.add("main-switch-on-anim");
+        setTimeout(() => {mainSwitch.classList.remove("main-switch-on-anim")}, 300);
+        mainSwitch.classList.replace("main-switch-off", "main-switch-on"); // Add animation and set switch to ON position
+    }
+    else {
+        mainSwitch.classList.add("main-switch-off-anim");
+        setTimeout(() => {mainSwitch.classList.remove("main-switch-off-anim")}, 300);
+        mainSwitch.classList.replace("main-switch-on", "main-switch-off"); // Add animation and set switch to OFF position
+    }
 });

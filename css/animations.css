@@ -1,16 +1,24 @@
 .led-animation-on {
-    animation: animation-on 0.3s ease 0s 1 normal forwards;
+    animation: led-animation-on 0.3s ease 0s 1 normal forwards;
 }
 
 .led-animation-off {
-    animation: animation-off 0.3s ease 0s 1 normal forwards;
+    animation: led-animation-off 0.3s ease 0s 1 normal forwards;
+}
+
+.main-switch-on-anim {
+    animation: main-switch-on 0.3s ease 0s 1 normal forwards;
+}
+
+.main-switch-off-anim {
+    animation: main-switch-off 0.3s ease 0s 1 normal forwards;
 }
 
 .hover-animation:hover {
     animation: hover 0.1s ease-out 0s 1 normal forwards;
 }
 
-@keyframes animation-on {
+@keyframes led-animation-on {
     0% {
         transform: translateX(0rem);
     }
@@ -20,13 +28,33 @@
     }
 }
 
-@keyframes animation-off {
+@keyframes led-animation-off {
     0% {
         transform: translateX(1.8rem);
     }
 
     100% {
         transform: translateX(0rem);
+    }
+}
+
+@keyframes main-switch-on {
+    0% {
+        transform: translateX(0rem);
+    }
+
+    100% {
+        transform: translateX(4.4rem);
+    }
+}
+
+@keyframes main-switch-off {
+    0% {
+        transform: translateX(4.4rem);
+    }
+
+    100% {
+        transform: translate(0rem);
     }
 }
 
