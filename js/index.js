@@ -1,47 +1,24 @@
-const led = document.querySelector(".led");
 const bpmIndicator = document.querySelector(".bpm-indicator");
-const ledSwitch = document.querySelector(".led-switch");
 const bpm = 120;
+const leds = document.querySelectorAll(".led");
+const ledSwitches = document.querySelectorAll(".led-switch");
 
 bpmIndicator.innerHTML = bpm + " BPM";
 
-function stateChange() {
-    if(led.classList.contains("led-state1")) {
-        led.classList.replace("led-state1", "led-state2");
-    }
-    else {
-        led.classList.replace("led-state2", "led-state1");
-    }
-}
-
-function timeOut() {
-    stateChange();
-    setTimeOut =  setTimeout(timeOut, 1/bpm*60*1000);
-}
-
-function ledSwitchFunction() {
-    if(ledSwitch.classList.contains("led-switch-off")) {
-        led.classList.replace("led-off", "led-state1");
-        ledSwitch.classList.replace("led-switch-off", "led-switch-on");
-        ledSwitch.classList.add("led-animation-on");
-        setTimeout(() => {ledSwitch.classList.remove("led-animation-on")}, 300);
-
-        timeOut();
-    }
-    else {
-        if(led.classList.contains("led-state1")) {
-            led.classList.replace("led-state1", "led-off");
-        }
+ledSwitches.forEach((value, i) => {
+    value.addEventListener("click", () => {
+        if(ledSwitches[i].classList.contains("led-switch-off")) {
+            ledSwitches[i].classList.replace("led-switch-off", "led-switch-on"); // Move the switch to ON position
+            ledSwitches[i].classList.add("led-animation-on"); // Add animation for the switch
+            setTimeout(() => {ledSwitches[i].classList.remove("led-animation-on")}, 300); // Remove animation class after 0.3 seconds
+            leds[i].classList.replace("led-off", "led-state1"); // Turn on the LED
+        } // Turn on the LED
         else {
-            led.classList.replace("led-state2", "led-off");
-        }
-
-        ledSwitch.classList.replace("led-switch-on", "led-switch-off");
-        ledSwitch.classList.add("led-animation-off");
-        setTimeout(() => {ledSwitch.classList.remove("led-animation-off")}, 300);
-
-        clearTimeout(setTimeOut);
-    }
-}
-
-ledSwitch.addEventListener("click", ledSwitchFunction);
+            ledSwitches[i].classList.replace("led-switch-on", "led-switch-off"); // Move the switch to OFF position
+            ledSwitches[i].classList.add("led-animation-off"); // Add animation for the switch
+            setTimeout(() => {ledSwitches[i].classList.remove("led-animation-off")}, 300); // Remove animation class after 0.3 seconds
+            if(leds[i].classList.contains("led-state1")) {leds[i].classList.replace("led-state1", "led-off");} // Turn off the LED
+            else {leds[i].classList.replace("led-state2", "led-off");} // Turn off the LED
+        } // Turn off the LED
+    })
+});
