@@ -1,3 +1,3 @@
- - [ ] Add a popup for setting a custom BPM value
+ - [X] Add a popup for setting a custom BPM value
  - [ ] Create a responsive design
  - [ ] Host this project on GitHub Pages
