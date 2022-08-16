@@ -118,12 +118,6 @@ main {
 
     display: flex;
     align-items: center;
-
-    cursor: pointer;
-}
-
-.switch-container:hover {
-    box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 1);
 }
 
 .led-switch {
@@ -161,12 +155,6 @@ main {
     box-shadow: inset 0px 0px 30px 0px rgba(0, 0, 0, 1);
     border-radius: 15px;
     width: 6rem;
-
-    cursor: pointer;
-}
-
-.main-switch-container:hover {
-    box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 1);
 }
 
 .main-switch {
