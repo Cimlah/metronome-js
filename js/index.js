@@ -38,3 +38,42 @@ mainSwitchContainer.addEventListener("click", () => {
         mainSwitch.classList.replace("main-switch-on", "main-switch-off"); // Add animation and set switch to OFF position
     }
 });
+
+let ids = []; // Create an array with IDs of LEDs (Don't know why, but they keep on changing)
+
+mainSwitchContainer.addEventListener("click", () => {
+    if(mainSwitch.classList.contains("main-switch-off")) {
+        for(let i = 0; i < 4; i++) {
+            clearTimeout(ids[i]); // Clear the `Timeout` for each element
+        }
+        ids = []; // Make the IDs array empty, so the values change, but not quantity
+        return;
+    } // Stop the sequence
+    else {
+        leds.forEach((value, i) => {
+            (() => {
+                setTimeout(() => {
+                    if(value.classList.contains("led-state1")) {
+                        value.classList.replace("led-state1", "led-state2");
+                    }
+                    else {
+                        value. classList.replace("led-state2", "led-state1");
+                    }
+                }, 1/bpm*60*1000*i)
+            }) (); // First iteration with no delay (with no `setInterval`)
+            
+            setTimeout(() => {
+                id = setInterval(() => {
+                    if(value.classList.contains("led-state1")) {
+                        value.classList.replace("led-state1", "led-state2");
+                    }
+                    else {
+                        value. classList.replace("led-state2", "led-state1");
+                    }
+                }, 1/bpm*60*1000*4)
+
+                ids.push(id); // Add IDs to the array
+            }, 1/bpm*60*1000*i)
+        })
+    } // Start the sequence
+})
