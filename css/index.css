@@ -172,3 +172,63 @@ main {
 .main-switch-on {
     transform: translateX(4.4rem);
 }
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.4);
+
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    background-color: #494542;
+
+    width: calc(70% - 8rem);
+    height: calc(60% - 8rem);
+
+    border-radius: 15px;
+    padding: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.bpm-input {
+    color: #000000;
+    border-radius: 15px;
+    border: none;
+    padding: 0.3rem;
+}
+
+.form-button {
+    background-color: #FFFFFF;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-button img {
+    width: 2rem;
+    height: 2rem;
+}
