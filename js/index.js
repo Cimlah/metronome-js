@@ -6,15 +6,19 @@ const ledSwitches = document.querySelectorAll(".led-switch");
 const mainSwitch = document.querySelector(".main-switch");
 const mainSwitchContainer = document.querySelector(".main-switch-container");
 let bpmInput = document.querySelector(".bpm-input");
+const form = document.querySelector(".form-container");
+const formButton = document.querySelector(".form-button");
 
 function setBpmValue() {
-    bpmInput.addEventListener("blur", () => {
+    bpmIndicator.innerHTML = bpm + " BPM";
+
+    formButton.addEventListener("click", () => {
         bpm = bpmInput.value;
         if(bpm == "") {bpm = 120;}
         console.log(bpm);
+        bpmIndicator.innerHTML = bpm + " BPM";
     })
-    bpmIndicator.innerHTML = bpm + " BPM";
-}
+} // Set custom BPM value
 
 function animationsForSwitchesAndLeds() {
     switchContainers.forEach((value, i) => {
@@ -92,7 +96,18 @@ function ledSequencer() {
     })
 }
 
+function showHideForm() {
+    bpmIndicator.addEventListener("click", () => {
+        form.style.display = "flex";
+    })
+
+    formButton.addEventListener("click", () => {
+        form.style.display = "none";
+    })
+} // Show and hide form for BPM input
+
 setBpmValue();
 animationsForSwitchesAndLeds();
 animationsForMainSwitch();
-ledSequencer()
+ledSequencer();
+showHideForm();
