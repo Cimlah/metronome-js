@@ -8,6 +8,9 @@
     --shadow-led-off: 0px 11px 30px -10px rgba(0, 0, 0, 1);
     --shadow-led-state1: 0px 11px 30px -10px rgba(255, 229, 186, 1);
     --shadow-led-state2: 0px 11px 30px -10px rgb(174, 223, 255);
+
+    --width-switch-container: 2.8rem;
+    --size-led-switch: calc((var(--width-switch-container) - 0.2rem) / 2);
 }
 
 .led-off {
@@ -112,7 +115,7 @@ main {
 
 .switch-container {
     background-color: #494542;
-    width: 3rem;
+    width: var(--width-switch-container);
     border-radius: 20px;
     box-shadow: inset 0px 0px 20px -5px rgba(0, 0, 0, 1);
 
@@ -123,8 +126,8 @@ main {
 .led-switch {
     background-color: #FFFFFF;
 
-    width: 0.9rem;
-    height: 0.9rem;
+    width: var(--size-led-switch);
+    height: var(--size-led-switch);
     margin: 0.1rem;
     border-radius: 50%;
 }
@@ -134,7 +137,7 @@ main {
 }
 
 .led-switch-on {
-    transform: translateX(1.8rem);
+    transform: translateX(var(--size-led-switch));
 }
 
 .bpm-indicator {
