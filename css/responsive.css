@@ -1,0 +1,43 @@
+@media (max-width: 1500px) {
+    :root {
+        --width-box-frame: 90%;
+        --height-box-frame: 80%;
+    }
+}
+
+@media (max-width: 1150px) {
+    :root {
+        --size-led: 6rem;
+    }
+}
+
+@media (max-height: 850px) {
+    :root {
+        --size-led: 6rem;
+        --width-switch-container: 2rem;
+    }
+}
+
+@media (orientation: portrait) {
+    :root {
+        --width-box-frame: 100%;
+        --height-box-frame: 100%;
+        --width-box: calc(100% - 1.5rem);
+        --height-box: calc(100% - 1.5rem);
+        --size-led: 2.5rem;
+    }
+
+    .box {
+        justify-content: center;
+        gap: 5%;
+    }
+
+    .leds-container {
+        height: 30%;
+    }
+
+    .led-container {
+        justify-content: center;
+        gap: 5%;
+    }
+}

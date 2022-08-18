@@ -10,7 +10,14 @@
     --shadow-led-state2: 0px 11px 30px -10px rgb(174, 223, 255);
 
     --width-switch-container: 2.8rem;
+    --width-main-switch-container: 6rem;
     --size-led-switch: calc((var(--width-switch-container) - 0.2rem) / 2);
+    --size-main-switch: calc((var(--width-main-switch-container) - 0.2rem) / 4);
+    --size-led: 8rem;
+    --width-box-frame: 70%;
+    --height-box-frame: 60%;
+    --width-box: calc(100% - 4rem);
+    --height-box: calc(100% - 4rem);
 }
 
 .led-off {
@@ -55,8 +62,8 @@ main {
 }
 
 .box-frame {
-    width: 70%;
-    height: 60%;
+    width: var(--width-box-frame);
+    height: var(--height-box-frame);
 
     display: flex;
     justify-content: center;
@@ -67,8 +74,8 @@ main {
 }
 
 .box {
-    width: calc(100% - 4rem);
-    height: calc(100% - 4rem);
+    width: var(--width-box);
+    height: var(--height-box);
 
     display: flex;
     justify-content: space-evenly;
@@ -96,15 +103,17 @@ main {
 
 .led-container {
     height: 90%;
+    width: 20%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    gap: 5%;
 }
 
 .led {
-    width: 8rem;
-    height: 8rem;
+    width: var(--size-led);
+    height: var(--size-led);
 
     border-radius: 50%;
 
@@ -144,7 +153,6 @@ main {
     background-color: #494542;
     box-shadow: inset 0px 0px 30px 0px rgba(0, 0, 0, 1);
     border-radius: 15px;
-    /* text-align: center; */
 
     display: flex;
     justify-content: center;
@@ -157,13 +165,13 @@ main {
     background-color: #494542;
     box-shadow: inset 0px 0px 30px 0px rgba(0, 0, 0, 1);
     border-radius: 15px;
-    width: 6rem;
+    width: var(--width-main-switch-container);
 }
 
 .main-switch {
     background-color: #FFFFFF;
-    width: 1.4rem;
-    height: 1.4rem;
+    width: var(--size-main-switch);
+    height: var(--size-main-switch);
     margin: 0.1rem;
     border-radius: 50%;
 }
@@ -173,7 +181,7 @@ main {
 }
 
 .main-switch-on {
-    transform: translateX(4.4rem);
+    transform: translateX(calc(var(--size-main-switch) * 3));
 }
 
 .form-container {
