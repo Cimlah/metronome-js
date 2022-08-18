@@ -40,4 +40,13 @@
         justify-content: center;
         gap: 5%;
     }
+
+    .form {
+        width: calc(var(--width-box) - 4rem);
+        height: calc(var(--height-box) - 4rem);
+    }
+
+    .bpm-input {
+        width: 100%;
+    }
 }
