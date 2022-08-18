@@ -202,8 +202,8 @@ main {
 .form {
     background-color: #494542;
 
-    width: calc(70% - 8rem);
-    height: calc(60% - 8rem);
+    width: calc(var(--width-box-frame) - 8rem);
+    height: calc(var(--height-box-frame) - 8rem);
 
     border-radius: 15px;
     padding: 2rem;
